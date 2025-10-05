@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    overflow: hidden;
+    font-family: 'Input Mono', monospace;
+    color: #00ff99;
+  }
+  
+  /* ===== Start Screen ===== */
+  #start-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .start-box {
+    border: 2px solid #00ff99;
+    padding: 20px 40px;
+    text-align: center;
+    animation: flicker-box 1.5s infinite alternate;
+  }
+  
+  #start-text {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: #00ff99;
+    animation: blink 1s infinite;
+    cursor: pointer;
+  }
+  
+  /* Blinking text */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.2; }
+  }
+  
+  /* Box flicker */
+  @keyframes flicker-box {
+    0% { box-shadow: 0 0 5px #00ff99; }
+    100% { box-shadow: 0 0 20px #00ff99; }
+  }
+  
+  /* ===== Main Hero ===== */
+  #matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+    color: #00ff99;
+  }
+  
+  .hero.hidden {
+    display: none;
+  }
+  
+  .hero-left {
+    flex: 1;
+  }
+  
+  .hero-right {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-right img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid #00ff99;
+    box-shadow: 0 0 15px #00ff99;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color: #00ff99;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 1);
+}
+  
+  .subtitle {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #66ffcc;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 1);
+}
+  
+  .description {
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #99ffcc;
+    max-width: 500px;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 1);
+}
+  
+  }
+  
+  .contact {
+    margin-top: 25px;
+  }
+  
+  .contact p {
+    font-size: 1rem;
+  }
+  
+  .social-icons {
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    margin: 0 8px;
+    font-size: 3rem;
+    color: #00ff99;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ffffff;
+  }
+  /* شاشات أصغر من 768px (موبايل) */
+@media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;  /* العنوان أصغر */
+    }
+  
+    .subtitle {
+      font-size: 1rem;  /* التخصص */
+    }
+  
+    .description {
+      font-size: 0.9rem;  /* الوصف */
+      max-width: 90%;     /* ما يتجاوز الشاشة */
+    }
+  
+    .social-icons a {
+      font-size: 1.2rem;  /* الأيقونات أصغر */
+      margin: 0 6px;
+    }
+  
+    .profile-pic {
+      width: 120px;   /* الصورة الشخصية أصغر */
+      height: 120px;
+    }
+  
+    .hero {
+      flex-direction: column;   /* بدل الصف عمود */
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  
